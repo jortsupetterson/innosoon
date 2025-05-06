@@ -5,16 +5,16 @@
  {
 	"$schema": "node_modules/wrangler/config-schema.json",
 	"name": "server",
-	"main": "./dist/Gateway.js",
+	"main": "./prod_server/Gateway.js",
 	"compatibility_date": "2025-05-06",
 	"compatibility_flags": ["nodejs_compat"],
 	"build": {
 	  "command": "npm run build && npm run build:server",
-	  "watch_dir": ["src_assets", "SERVER"]
+	  "watch_dir": ["ASSETS", "SERVER"]
 	},
 	"assets": {
 	  "binding": "ASSETS",
-	  "directory": "./ASSETS"
+	  "directory": "./prod_assets"
 	},
 	"observability": {
 	  "enabled": true

@@ -4,8 +4,8 @@
 	"private": true,
 	"scripts": {
 		"build": "node build.js",
-		"build:server": "esbuild SERVER/Gateway.js --bundle --minify --format=esm --splitting --outdir=dist",
-		"build:watch": "nodemon --watch src_assets --watch SERVER --ext js,css,html --exec \"npm run build && npm run build:server\"",
+		"build:server": "esbuild SERVER/Gateway.js --bundle --minify --format=esm --splitting --outdir=prod_server",
+		"build:watch": "nodemon --watch ASSETS --watch SERVER --ext js,css,html --exec \"npm run build && npm run build:server\"",
 		"dev": "npm run build && npm run build:server && wrangler dev --host template.dev",
 		"deploy": "npm run build && npm run build:server && wrangler deploy"
 	},

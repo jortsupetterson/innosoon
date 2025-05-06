@@ -6,8 +6,8 @@ const { minify } = require('html-minifier-terser');
 const glob = require('glob');
 
 (async function(){
-  const srcRoot = path.resolve(__dirname, 'src_assets');
-  const outRoot = path.resolve(__dirname, 'ASSETS');
+  const srcRoot = path.resolve(__dirname, 'ASSETS');
+  const outRoot = path.resolve(__dirname, 'prod_assets');
   await fs.mkdir(outRoot, { recursive: true });
   const files = glob.sync('**/*.*', { cwd: srcRoot, nodir: true });
   for(const rel of files){
