@@ -10,7 +10,7 @@ const hostRoots = {
   
   // 2) Staattiset API‐reitit
   const apiRoutes = {
-	'/message': () => new Response('Hello, World!'),
+	'/message': () => new Response(import("Mail/message.js") ),
 	'/random':  () => new Response(crypto.randomUUID()),
   };
   
