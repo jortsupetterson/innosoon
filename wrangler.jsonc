@@ -2,15 +2,15 @@
  * For more details on how to configure Wrangler, refer to:
  * https://developers.cloudflare.com/workers/wrangler/configuration/
  */
-{
+ {
 	"$schema": "node_modules/wrangler/config-schema.json",
-	"name": "innosoon",
-	"main": "./SERVER/Gateway.js",
+	"name": "server",
+	"main": "./dist/Gateway.js",
 	"compatibility_date": "2025-05-06",
 	"compatibility_flags": ["nodejs_compat"],
 	"build": {
-	  "command": "npm run build",
-	  "watch_dir": "src_assets"
+	  "command": "npm run build && npm run build:server",
+	  "watch_dir": ["src_assets", "SERVER"]
 	},
 	"assets": {
 	  "binding": "ASSETS",
@@ -18,7 +18,11 @@
 	},
 	"observability": {
 	  "enabled": true
-	}
+	},
+	"routes": [
+	  "innosoon.online/*",
+	  "*.innosoon.online/*"
+	]
   }
   
 
